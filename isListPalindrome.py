@@ -49,7 +49,7 @@ def isListPalindrome(l):
         curr = nxt
         
 
-    # prev points to the 2nd half of the list
+    # prev is the head of the 2nd half of the list reversed
     k = math.floor(ln/2)
     
     # compare the two lists for diff elements.
