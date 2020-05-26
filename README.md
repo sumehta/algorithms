@@ -24,3 +24,7 @@ Based on this idea, first sort the array, fix a target while iterating and solve
 Couple of optimizations -
 1) While iterating the sorted array, if consecutive targets are the same, skip the computation the 2nd time, because it will lead to the same tuples.
 2) While solving the 2sum problem if consecutive numbers at left position are equal increment the left pointer and if consecutive numbers at the right position are equal decrement the right pointer. This is because same numbers will lead to same answer pairs.
+
+4. [3SumClosest](https://leetcode.com/problems/3sum-closest/submissions/)
+
+Key ideas - Sort the array. Iterating from left to right fix numbers. For the rest of the array, check sum of all pairs along with the fixed number using left and right pointers. If the sum current sum is greater than target, since the array is sorted decrease the sum by decrementing the left pointer. If the current sum is less than the target, since the array is sorted, increase the sum by incrementing the left pointer. Keep track of the sum closest to the target by using an extra variable.
