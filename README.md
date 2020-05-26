@@ -14,3 +14,13 @@ traverse through the array. We must somehow keep track of the difference between
 Defines a python LinkedList class as an iterator object.
 
 Iterator objects in python conform to the iterator protocol, which basically means they provide two methods: `__iter__()` and  `next()`. The `__iter__` returns the iterator object and is implicitly called at the start of loops. The next() method returns the next value and is implicitly called at each loop increment.  next() raises a StopIteration exception when there are no more value to return, which is implicitly captured by looping constructs to stop iterating.
+
+3. [3Sum](https://leetcode.com/problems/3sum/)
+
+Key ideas - In an array sorted in the ascending order, with a target chosen while iterating from left to right, if target+a+b=0, this condition must hold true then a>target and b>target and target<0.
+
+Based on this idea, first sort the array, fix a target while iterating and solve the two sum problem using two pointers for all elements greater than target, that is target position onwards.
+
+Couple of optimizations -
+1) While iterating the sorted array, if consecutive targets are the same, skip the computation the 2nd time, because it will lead to the same tuples.
+2) While solving the 2sum problem if consecutive numbers at left position are equal increment the left pointer and if consecutive numbers at the right position are equal decrement the right pointer. This is because same numbers will lead to same answer pairs.
